@@ -1,0 +1,6 @@
+{  
+    "name":"other",
+    "id":"otr",
+    "description":"Other commands",
+    "helpMessage": true
+}

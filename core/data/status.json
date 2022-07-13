@@ -1,7 +1,7 @@
 [
     {
         "type": "PLAYING",
-        "name": "i guess 👌"
+        "name": "coding simulator"
     },
     {
         "type": "LISTENING",
@@ -10,5 +10,14 @@
     {
         "type": "PLAYING",
         "name": "in {servers} servers"
+    },
+    {
+        "type": "WATCHING",
+        "name": "on {channels} channels"
+    },
+    {
+        "type": "PLAYING",
+        "name": "fixing 512 errors simulator"
     }
+           
 ]
