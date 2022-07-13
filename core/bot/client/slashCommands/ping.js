@@ -3,7 +3,7 @@ const discord = require("discord.js");
 /**
  * @description Get the clients latency.
  * @param {discord.Client} client - The client.
- * @param {discord.Interaction} interaction - The interation.
+ * @param {discord.Interaction} interaction - The interaction.
  */
 function run(client, interaction) {
     const ws = client.ws.ping;

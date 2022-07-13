@@ -11,14 +11,14 @@ function run(client, message, args) {
     const embed = new discord.MessageEmbed()
     .setTitle("Credits")
     .setColor(`#ff6d91`)
-.setDescription("shows credits")
-.addFields(
+    .setDescription("shows credits")
+    .addFields(
     {name:"Abyss#7777",value:"Creator"},
   )
-    .setFooter(client.secrets.namewithversion)
     .setTimestamp();
-    message.channel.send({ embeds: [embed] })
-
+    message.channel.send({ embeds: [embed] 
+    })
+    
 };
 
 module.exports = {

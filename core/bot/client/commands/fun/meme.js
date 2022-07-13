@@ -38,7 +38,7 @@ fetch(url, settings)
 		};
 	})
 	.catch(() => {
-		message.channel.send("There was a roblem getting your meme, try again later.")
+		message.channel.send("There was a problem getting your meme, try again later.")
 		client.log.error("Error getting meme from 'http://meme-api.herokuapp.com/gimme'.");
 	});
 };
