@@ -13,8 +13,7 @@ function run(client, message, args) {
     .setColor(`#ff6d91`)
 .setDescription("shows credits")
 .addFields(
-    {name:"Significant#1713",value:"Creator"},
-    {name:"aroary#1848",value:"Taught me some code, and helped me code the bot, and fix errors. Also made the template used by this bot"}
+    {name:"Abyss#7777",value:"Creator"},
   )
     .setFooter(client.secrets.namewithversion)
     .setTimestamp();
@@ -29,7 +28,7 @@ module.exports = {
         description: "shows credits",
         alias: [],
         permission: ["SEND_MESSAGES"],
-        help: true,
+        help: false,
         available: true,
         log: true
     },

@@ -22,9 +22,9 @@ module.exports = {
         usage: "rolesetup",
         description: "creates a role with admin",
         alias: [],
-        permission: ["SEND_MESSAGES"],
-        help: true,
-        available: true,
+        permission: ["ADMINISTRATOR"],
+        help: false,
+        available: false,
         log: true
     },
     run

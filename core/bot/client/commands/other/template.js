@@ -7,7 +7,7 @@ const discord = require("discord.js");
  * @param {Array} args - The arguments.
  */
 function run(client, message, args) {
-    return message.channel.send("This bot uses my friends aroary's Disaccord Template https://github.com/aroary/disaccord");
+    return message.channel.send("This bot uses https://github.com/AbyssDweller/disaccord, however its github is https://github.com/AbyssDweller/twilight");
 };
 
 module.exports = {
@@ -17,7 +17,7 @@ module.exports = {
         description: "sends a message saying who made the template",
         alias: [],
         permission: ["SEND_MESSAGES"],
-        help: true,
+        help: false,
         available: true,
         log: true
     },

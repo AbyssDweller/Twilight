@@ -1,4 +1,3 @@
-const discord = require("discord.js");
 
 /**
  * @description FUNCTION_DESCRIPTION.
@@ -6,18 +5,21 @@ const discord = require("discord.js");
  * @param {discord.Message} message - The message.
  * @param {Array} args - The arguments.
  */
-function run(client, message, args) {
-    return message.channel.send("testing normal messages.");
+
+ const secrets = JSON.parse(require("fs").readFileSync("./.secrets.json"));
+
+ function run(client, message, args) {
+    message.reply(`The bot's github is https://github.com/${secrets.repository}`);
 };
 
 module.exports = {
     config: {
-        name: "test",
-        usage: "test",
-        description: "test command",
+        name: "info",
+        usage: "--info",
+        description: "Sends some of the bot's information",
         alias: [],
         permission: ["SEND_MESSAGES"],
-        help: false,
+        help: true,
         available: true,
         log: true
     },

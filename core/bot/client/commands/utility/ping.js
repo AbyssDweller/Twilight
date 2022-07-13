@@ -7,17 +7,20 @@ const discord = require("discord.js");
  * @param {Array} args - The arguments.
  */
 function run(client, message, args) {
-    return message.channel.send("testing normal messages.");
+    const ws = client.ws.ping;
+    const time = message.createdTimestamp - new Date();
+    const ping = new discord.MessageEmbed().setDescription(`*api **\`${time}\`***\n*ws  **\`${ws}\`***`);
+    message.reply({ embeds: [ping], ephemeral: true });   
 };
 
 module.exports = {
     config: {
-        name: "test",
-        usage: "test",
-        description: "test command",
+        name: "Ping",
+        usage: "--ping",
+        description: "Sends the ping of the bot",
         alias: [],
         permission: ["SEND_MESSAGES"],
-        help: false,
+        help: true,
         available: true,
         log: true
     },
