@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta tags -->
+        <meta name="description" content="<%= description %>"/>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <title><%= user.username %> | Home</title>
+        <!-- Style links -->
+        <link rel="stylesheet" type="text/css" href="./home.css">
+        <link rel="shortcut icon" href="<%= user.avatarURL %>" type="image/x-icon">
+    </head>
+    <body>
+        <header>
+            <h2><a id="homeURL">Home</a></h2>
+            <h2><a id="commandsURL">Commands</a></h2>
+        </header>
+        <main>
+            <h3>Repository</h3>
+            <div class="github-card" data-github="<%= repository %>" data-width="100%" data-height="0" data-theme="medium"></div>
+            <h3>Server</h3>
+            <iframe src="https://discord.com/widget?id=<%= supportServer %>&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </main>
+        <footer>
+            <h6><a href="http://github.com/<%= repository %>" target="_blank" rel="noopener noreferrer"><%= repository.split`/`.pop() %></a></h6>
+            <h6><a href="http://github.com/<%= repository.split`/`.shift() %>" target="_blank" rel="noopener noreferrer"><%= repository.split`/`.shift() %></a></h6>
+            <h6><a href="https://discord.com/api/oauth2/authorize?client_id=<%= user.id %>&permissions=8&scope=bot%20applications.commands" target="_blank" rel="noopener noreferrer">Invite</a></h6>
+        </footer>
+        <!-- Scripts -->
+        <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+        <script src="./home.js"></script>
+    </body>
+</html>

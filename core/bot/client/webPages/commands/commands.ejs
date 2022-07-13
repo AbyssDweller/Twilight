@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta tags -->
+        <meta name="description" content="<%= description %>"/>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <title><%= user.username %> | Home</title>
+        <!-- Style links -->
+        <link rel="stylesheet" type="text/css" href="./commands.css">
+        <link rel="shortcut icon" href="<%= user.avatarURL %>" type="image/x-icon">
+    </head>
+    <body>
+        <header>
+            <h2><a id="homeURL">Home</a></h2>
+            <h2><a id="commandsURL">Commands</a></h2>
+        </header>
+        <main>
+            <h1>Commands</h1>
+            <table id="commands">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Usage</th>
+                    <th>Aliases</th>
+                    <th>Permissions</th>
+                </tr>
+                <% commands.forEach(command => { %>
+                    <%- "<tr>" %>
+                        <%- `<td>${command.config.name}</td>` %>
+                        <%- `<td>${command.config.description}</td>` %>
+                        <%- `<td>${command.config.usage}</td>` %>
+                        <%- `<td>${command.config.alias.length ? command.config.alias.join`, `.toLowerCase().replace("_", " ") : "None"}</td>` %>
+                        <%- `<td>${command.config.permission.length ? command.config.permission.join`, `.toLowerCase().replace("_", " ") : "None"}</td>` %>
+                    <%- "</tr>" %>
+                <% }); %>
+            </table>
+        </main>
+        <footer>
+            <h6><a href="http://github.com/<%= repository %>" target="_blank" rel="noopener noreferrer"><%= repository.split`/`.pop() %></a></h6>
+            <h6><a href="http://github.com/<%= repository.split`/`.shift() %>" target="_blank" rel="noopener noreferrer"><%= repository.split`/`.shift() %></a></h6>
+            <h6><a href="https://discord.com/api/oauth2/authorize?client_id=<%= user.id %>&permissions=8&scope=bot%20applications.commands" target="_blank" rel="noopener noreferrer">Invite</a></h6>
+        </footer>
+        <!-- Scripts -->
+        <script src="./commands.js"></script>
+    </body>
+</html>
