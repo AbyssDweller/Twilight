@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const discord = require("discord.js");
 const secrets = JSON.parse(require("fs").readFileSync("./.secrets.json"));
 const Discord = require("discord.js");
@@ -12,12 +13,12 @@ function run(client, message) {
 		getMeme(client, message, true);
 	} else {
 		getMeme(client, message);
-	};
+	}
 }
 
 
 function getMeme(client, message, nsfw = false) {
-	const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));;
+	const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 let url = 'http://meme-api.herokuapp.com/gimme';
 let settings = { method: 'get' };
 
@@ -35,13 +36,13 @@ fetch(url, settings)
 				.setFooter(json.subreddit, "https://cdn.discordapp.com/attachments/766316423306805269/855169541805441024/emoticon-xxl.png")
 				.setTimestamp();
 				message.channel.send({embeds: [meme]})
-		};
+		}
 	})
 	.catch(() => {
 		message.channel.send("There was a problem getting your meme, try again later.")
 		client.log.error("Error getting meme from 'http://meme-api.herokuapp.com/gimme'.");
 	});
-};
+}
 
 
 module.exports = {

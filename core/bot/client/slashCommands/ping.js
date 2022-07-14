@@ -10,7 +10,7 @@ function run(client, interaction) {
     const time = interaction.createdTimestamp - new Date();
     const ping = new discord.MessageEmbed().setDescription(`*api **\`${time}\`***\n*ws  **\`${ws}\`***`);
     interaction.reply({ embeds: [ping], ephemeral: true });
-};
+}
 
 module.exports = {
     configuration: {

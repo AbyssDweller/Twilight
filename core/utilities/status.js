@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * @file Status function for setting the clients status.
  * @author aroary
@@ -23,7 +24,9 @@ module.exports = client => {
         // Replace name data with client data.
         presences[0].name = presences[0].name
             .replace("{users}", client.users.cache.size)
-            .replace("{servers}", client.guilds.cache.size);
+            .replace("{servers}", client.guilds.cache.size)
+            .replace("{channels}", client.channels.cache.size);
+
 
         // Set the presence to the first value in the array.
         client.user.setPresence({ activities: [presences[0]], status: "online" });

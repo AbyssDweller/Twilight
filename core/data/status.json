@@ -13,7 +13,7 @@
     },
     {
         "type": "WATCHING",
-        "name": "on {channels} channels"
+        "name": "{channels} channels"
     },
     {
         "type": "PLAYING",

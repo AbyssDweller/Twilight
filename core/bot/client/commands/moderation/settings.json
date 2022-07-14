@@ -1,0 +1,6 @@
+{
+    "name": "moderation",
+    "id": "mod",
+    "description": "Commands to moderate your server",
+    "helpMessage": true
+}
